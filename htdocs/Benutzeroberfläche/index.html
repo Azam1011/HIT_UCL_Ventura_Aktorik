@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+ <head>
+    <meta charset="utf-8">
+    <meta name="UCL_Ventura Control" content="This site provides Control over the UCL_Ventura">
+    <meta name="UCL_Ventura" content="example, html, head, meta">
+    
+    <link rel="shortcut icon" href="images/favico.ico" type="images/x-icon">
+	  <link rel="icon" href="images/favico.ico" type="images/x-icon">
+    <title>UCL_Ventura</title>
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <script src="javascripts/Javascript.js">
+        </script>
+	<!-- Custom styles for this template -->
+    
+    <link rel="stylesheet" href="stylesheets/design.css">
+    <!-- Toggle switch styles-->
+    <link rel="stylesheet" href="stylesheets/toggleswitch.css">
+	
+    <?php
+	    header("refresh: 0;");
+	  ?>
+	</head>
+
+
+  <body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">		
+        <div class="container">
+    <img class="logo_image" src="images/hka_logo.png">
+            <a class="navbar-brand" href="#page-top">Hochschule Karlsruhe - UCL_Ventura</a>
+
+    </nav>
+
+
+    <header class="text-white">
+        <div class="container text-center">
+            <h1> 
+                UCL_Ventura Control
+            </h1>
+            <p class="lead">
+                UCL Ventilator
+            </p>
+        </div>
+    </header>
+
+    <section id="UCL_Vent_Sensor">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 style="text-align: center; color: rgb(39, 192, 243);">UCL_Ventura User Interface</h2>
+                    <p></p>
+                
+                    <table class="table-borderless" style="width: 100%; margin-top: 20px; margin-bottom: 50px; table-layout: fixed;">
+                        <tr>
+                            <th style="text-align:center;"></th>
+                            <th style="text-align:center;"></th>
+                        </tr>
+                        <tr>
+                            <td scope="row" style="text-align:center;" >On/Off</td>
+                            <td style="text-align:center;">
+                                <!-- Rounded switch -->
+                                <label class="switch" >
+                                    <input id = "On_Off_Input" type="checkbox"  oninput="On_Off_changed()">
+                                    <span class="slider round"></span>
+                                </label>
+                            </td>
+                            <td style = "text-align:center"><strong id = "On_Off_Value"></strong></td>
+                        </tr>
+                        <tr>
+                            <td scope="row" style="text-align:center;" >FLow in (slm3)</td>
+                            <td style="text-align:center;"><Input id = "Flow_in_Input" oninput = "Flow_in_changed()" type = "range" min = "0"
+                                max = "250" step = "10">
+                            </td>
+                            <td style = "text-align:center"><strong id = "Flow_in_Value"></strong></td>
+                        </tr>
+                            
+                        <tr>
+                            <td scope="row" style="text-align:center;" >O2 (%)</td>
+                            <td style="text-align:center;"><Input id = "O2_Input" oninput = "O2changed()" type = "range" min = "21"
+                                max = "100" step = ".5">
+                            </td>
+                            <td style = "text-align:center"><strong id = "O2_Value"></strong></td>
+
+                        </tr>
+
+                    </table>
+
+                    <hr style = "align-self: center; width:100%" >
+
+                    <p class = "lead" style = "text-align: center;"><strong>Measured Data</strong></p>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center;">Sensor</th>
+                                <th style="text-align:center;">Sensor Data</th>
+                                <th style="text-align:center;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        
+                        <tr>
+                            <td scope="row" style="text-align:center;" >FLow in (slm3)</td>
+                            <td style="text-align:center;"><strong id = "Flow_IN"></strong>
+                            </td>
+                            </tr>
+
+                        <tr>
+                            <td scope="row" style="text-align:center;" >FLow out (slm3)</td>
+                            <td style="text-align:center;"><strong id = "Flow_OUT"></strong>
+                            </td>
+                            </tr>
+
+                        <tr>
+                            <td scope="row" style="text-align:center;" >Pressure (mbar)</td>
+                            <td style="text-align:center;"><strong id = "Pressure"></strong></td>
+                            </tr>
+                    
+                        <tr>
+                            <td scope="row" style="text-align:center;" >O2 (%)</td>
+                            <td style="text-align:center;"><strong id = "O2"></strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                
+                
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+    <footer class="py-2">
+				<div class="container">
+					<div id="left">Copyright &copy; Hochschule Karlsruhe 2021</div>
+					<div id="center">
+					</div>
+				</div>
+				<!-- /.container -->
+			</footer>
+  </body>
+
+
+</html>
+
